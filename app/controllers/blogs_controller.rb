@@ -3,6 +3,10 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :destroy]
   before_action :authorize_blog, only: [:destroy]
 
+  def index
+    render json: Blog.all
+  end
+
   def show
     # @blog is set by the before_action :set_blog
     render json: @blog

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
-  resources :blogs, only: [:show, :create, :destroy] do
+  resources :blogs, only: [:index, :show, :create, :destroy] do
     resources :comments, only: [:index, :create, :destroy]
   end
 
